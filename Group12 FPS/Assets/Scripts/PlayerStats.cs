@@ -25,8 +25,21 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float Damage)
     {
-        Health -= Damage;
+         Health -= Damage;
+         HealthSlider.SetValueWithoutNotify(Health / 100f);        
+    }
 
-        HealthSlider.SetValueWithoutNotify(Health / 100f);
+    public void PickUpHealth(float PickUp)
+    {
+        if (Health < 100)
+        {
+            Health += PickUp;
+
+            if(Health > 100)
+            {
+                Health = 100f;
+            }
+            HealthSlider.SetValueWithoutNotify(Health / 100f);
+        }
     }
 }

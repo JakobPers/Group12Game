@@ -13,7 +13,7 @@ public class MonsterShot : MonoBehaviour
     public GameObject Player;
 
     public Transform ReachCheck;
-    public float Reach = 2.5f;
+    public float Reach = 1.7f;
     public LayerMask PlayerMask;
 
     bool inReach;
