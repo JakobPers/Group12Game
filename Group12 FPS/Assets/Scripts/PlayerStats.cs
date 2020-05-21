@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
 
+    
+    public GameObject gameOverObject; 
+
     public float Health = 100f;
 
     public Slider HealthSlider;
@@ -18,10 +21,20 @@ public class PlayerStats : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-
- 
+    { 
+        if (Health <= 0) {
+            PlayerDead ();
+        }
     }
+
+    public void PlayerDead () 
+    {
+        gameOverObject.SetActive (true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None; 
+        // Camera.main.GetComponent<camerafollow>().enabled = false;
+    }
+
 
     public void TakeDamage(float Damage)
     {
