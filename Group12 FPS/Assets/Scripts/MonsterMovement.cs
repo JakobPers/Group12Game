@@ -7,6 +7,8 @@ public class MonsterMovement : MonoBehaviour
 {
     public NavMeshAgent Agent;
 
+    public CapsuleCollider Collider;
+
     public Transform Player;
 
     public bool isDead = false;
@@ -36,6 +38,7 @@ public class MonsterMovement : MonoBehaviour
     {
         isDead = true;
         GameObject.Destroy(Agent);
+        GameObject.Destroy(Collider);
     }
 
     public void setAttack(bool Attack)
