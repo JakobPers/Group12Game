@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
 
-    
     public GameObject gameOverObject; 
 
     public float Health = 100f;
@@ -16,7 +15,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+            Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -24,7 +23,9 @@ public class PlayerStats : MonoBehaviour
     { 
         if (Health <= 0) {
             PlayerDead ();
-        }
+            Time.timeScale = 0f;
+            
+        } 
     }
 
     public void PlayerDead () 
@@ -34,7 +35,6 @@ public class PlayerStats : MonoBehaviour
         Cursor.lockState = CursorLockMode.None; 
         // Camera.main.GetComponent<camerafollow>().enabled = false;
     }
-
 
     public void TakeDamage(float Damage)
     {
