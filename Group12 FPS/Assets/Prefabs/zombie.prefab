@@ -1988,8 +1988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agent: {fileID: 4413596608323083460}
-  Collider: {fileID: 0}
-  Player: {fileID: 1452483078165521798, guid: f0662b7ec15a92f449a4000c2de6115c, type: 3}
+  Collider: {fileID: 4413596608323083462}
   isDead: 0
 --- !u!1 &5753313510654225870
 GameObject:

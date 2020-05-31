@@ -7,7 +7,7 @@ public class MonsterShot : MonoBehaviour
     Animator Anim;
 
     public MonsterMovement MonsterMove;
-    public Transform Player;
+    //private Transform Player = GameObject.FindWithTag("Player").transform;
 
     public Transform ReachCheck;
     public float Reach = 1.7f;
@@ -39,7 +39,7 @@ public class MonsterShot : MonoBehaviour
 
         if (inReach && !isDead && Time.time >= Cooldown)
         {
-            Player.GetComponent<PlayerStats>().TakeDamage(2f);
+            GameObject.FindWithTag("Player").GetComponent<PlayerStats>().TakeDamage(2f);
             Cooldown = Time.time + 1f / AttackRate;
         }
     }

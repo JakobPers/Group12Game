@@ -664,8 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agent: {fileID: 4837249781954151315}
-  Collider: {fileID: 0}
-  Player: {fileID: 1452483078165521798, guid: f0662b7ec15a92f449a4000c2de6115c, type: 3}
+  Collider: {fileID: 4837249781954151020}
   isDead: 0
 --- !u!195 &4837249781954151315
 NavMeshAgent:

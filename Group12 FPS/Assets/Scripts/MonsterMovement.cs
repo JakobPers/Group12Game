@@ -9,7 +9,7 @@ public class MonsterMovement : MonoBehaviour
 
     public CapsuleCollider Collider;
 
-    public Transform Player;
+    // public Transform Player;
 
     public bool isDead = false;
     bool inReach = false;
@@ -25,7 +25,7 @@ public class MonsterMovement : MonoBehaviour
     {
         if (!isDead)
         {
-            Vector3 PlayerPos = Player.transform.position;
+            Vector3 PlayerPos = GameObject.FindWithTag("Player").transform.position;
 
             if (!inReach)
             {
