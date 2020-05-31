@@ -6,27 +6,41 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
 
-    private float Health;
+    public GameObject gameOverObject;
+
+    public float Health = 100f;
 
     public Slider HealthSlider;
 
     // Start is called before the first frame update
     void Start()
     {
-        Health = 100f;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Health <= 0)
+        {
+            PlayerDead();
+            Time.timeScale = 0f;
 
- 
+        }
+    }
+
+    public void PlayerDead()
+    {
+        gameOverObject.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        // Camera.main.GetComponent<camerafollow>().enabled = false;
     }
 
     public void TakeDamage(float Damage)
     {
-         Health -= Damage;
-         HealthSlider.SetValueWithoutNotify(Health / 100f);        
+        Health -= Damage;
+        HealthSlider.SetValueWithoutNotify(Health / 100f);
     }
 
     public void PickUpHealth(float PickUp)
@@ -35,7 +49,7 @@ public class PlayerStats : MonoBehaviour
         {
             Health += PickUp;
 
-            if(Health > 100)
+            if (Health > 100)
             {
                 Health = 100f;
             }
