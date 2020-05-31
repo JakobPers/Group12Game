@@ -19,6 +19,7 @@ public class MonsterShot : MonoBehaviour
     float Cooldown;
 
     float AttackRate = 1f;
+    private float AttackDamage = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class MonsterShot : MonoBehaviour
 
         if (inReach && !isDead && Time.time >= Cooldown)
         {
-            GameObject.FindWithTag("Player").GetComponent<PlayerStats>().TakeDamage(2f);
+            GameObject.FindWithTag("Player").GetComponent<PlayerStats>().TakeDamage(AttackDamage);
             Cooldown = Time.time + 1f / AttackRate;
         }
     }

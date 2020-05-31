@@ -645,7 +645,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterMove: {fileID: 4837249781954151021}
-  Player: {fileID: 1452483078165521798, guid: f0662b7ec15a92f449a4000c2de6115c, type: 3}
   ReachCheck: {fileID: 4837249782062763131}
   Reach: 1.7
   PlayerMask:
