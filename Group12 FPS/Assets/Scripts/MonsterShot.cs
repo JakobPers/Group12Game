@@ -1,16 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonsterShot : MonoBehaviour
 {
-
-    public float Health = 100f;
+    private float Health;
 
     Animator Anim;
 
     public MonsterMovement MonsterMove;
-    public GameObject Player;
+    public Transform Player;
 
     public Transform ReachCheck;
     public float Reach = 1.7f;
@@ -26,6 +23,7 @@ public class MonsterShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Health = 100f;
         Anim = gameObject.GetComponent<Animator>();
         Anim.SetFloat("Health", Health);
     }
@@ -43,7 +41,6 @@ public class MonsterShot : MonoBehaviour
         {
             Player.GetComponent<PlayerStats>().TakeDamage(2f);
             Cooldown = Time.time + 1f / AttackRate;
-
         }
     }
 
@@ -53,14 +50,10 @@ public class MonsterShot : MonoBehaviour
 
         Anim.SetFloat("Health", Health);
 
-        if (Health < 1f) 
+        if (Health < 1f)
         {
             MonsterMove.setDead();
             isDead = true;
         }
-
-
-
-
     }
 }

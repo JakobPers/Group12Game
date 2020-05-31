@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
 
-    public float Health = 100f;
+    private float Health;
 
     public Slider HealthSlider;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Health = 100f;
     }
 
     // Update is called once per frame

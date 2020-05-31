@@ -37,8 +37,8 @@ public class MonsterMovement : MonoBehaviour
     public void setDead()
     {
         isDead = true;
-        GameObject.Destroy(Agent);
-        GameObject.Destroy(Collider);
+        Destroy(Agent);
+        Destroy(Collider);
     }
 
     public void setAttack(bool Attack)
