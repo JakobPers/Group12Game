@@ -12,7 +12,7 @@ public class Restart : MonoBehaviour
     }
 
     public void Click () {
-        SceneManager.LoadScene("JakobScene");
+        SceneManager.LoadScene("JakobSceneOG");
         Debug.Log("RESTART");
     }
 
